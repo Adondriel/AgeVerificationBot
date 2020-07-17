@@ -1,0 +1,17 @@
+{
+  "compilerOptions": {
+    "module": "commonjs",
+    "target": "es2017",
+    "moduleResolution": "node",
+    "removeComments": true,
+    "emitDecoratorMetadata": true,
+    "experimentalDecorators": true,
+    "sourceMap": true,
+    "importHelpers": true,
+    "outDir": "./dist",
+    "baseUrl": "./",
+    "incremental": false,
+    "lib": ["es2017","esnext.asynciterable"],
+  },
+  "exclude": ["node_modules", "dist"]
+}
