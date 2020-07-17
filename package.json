@@ -12,6 +12,7 @@
     "start:dev": "nest start --watch",
     "start:debug": "nest start --debug --watch",
     "start:prod": "node dist/main",
+    "start:heroku": "npm run prebuild && npm run build && npm run start:prod",
     "lint": "tslint -p tsconfig.json -c tslint.json",
     "migration:generate": "ts-node node_modules/typeorm/cli.js migration:generate",
     "migration:run": "ts-node node_modules/.bin/typeorm migration:run",
