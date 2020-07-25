@@ -7,27 +7,27 @@ export abstract class HelpCommand {
         const helpMsg = new MessageEmbed({
             type: 'rich',
             title: 'Help: Age Verification Bot',
-            description: 'all commands start with !av-',
+            description: 'All commands require administrator permission. \n Min & Max age are not displayed to the user.',
             fields: [{
-                name: 'help',
-                value: 'Displays this message',
+                name: '!av help',
+                value: 'Displays this message.',
                 inline: false,
             }, {
-                name: 'nvr',
-                value: '**Syntax:** !av-nvr <RoleName>\n This will set which role is used as the "age-not-verified" role. \n(Role name must be unique)',
+                name: '!av nvr <Role Name>',
+                value: 'This will set which role is used as the "age-not-verified" role. \n(Role name must be unique)',
                 inline: false,
             }, {
-                name: 'vr',
-                value: '**Syntax:** !av-vr <RoleName>\n This will set which role is used as the "age-verified" role. \n(Role name must be unique)',
-                inline: true,
-            }, {
-                name: 'minage',
-                value: '**Syntax:** !av-minage <number>\n Anyone that responds under this age will be banned.',
+                name: '!av vr <Role Name>',
+                value: 'This will set which role is used as the "age-verified" role. \n(Role name must be unique)',
                 inline: false,
             }, {
-                name: 'maxage',
-                value: '**Syntax:** !av-maxage <number>\n Anyone that responds over this age will be banned after 2 attempts.',
-                inline: true,
+                name: '!av minage <number>',
+                value: 'Sets the minimum age for a user on your server.\nAnyone that responds under this age will be banned.',
+                inline: false,
+            }, {
+                name: '!av maxage <number>',
+                value: 'Sets the maximum age for a user on your server.\nAnyone that responds over this age will be banned after 2 attempts.',
+                inline: false,
             }],
         });
         cmd.reply(helpMsg);

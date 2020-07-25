@@ -3,11 +3,10 @@ import { AgeVerificationService } from './bot/ageVerification.service';
 import { createConnection } from 'typeorm';
 import * as Path from 'path';
 
-@Discord('!av-', {
+@Discord('!av ', {
   import: [
     Path.join(__dirname, 'commands', '*.ts'),
     Path.join(__dirname, 'commands', '*.js'),
-
   ],
 })
 export class Main {
@@ -26,17 +25,18 @@ export class Main {
   @On('ready')
   async onReady(args, bot) {
     console.log(`Logged in as ${bot.user.tag}`);
+    bot.user.setActivity('!av help');
   }
 
   @On('guildMemberAdd')
-  async onGuildMemberAdd([member]: ArgsOf<'guildMemberAdd'>, bot) {
+  async onGuildMemberAdd([member]: ArgsOf<'guildMemberAdd'>) {
     const avs = new AgeVerificationService(member.guild);
     await avs.init();
     avs.onGuildMemberAdd(member);
   }
 
   @On('guildCreate')
-  async onGuildCreate([guild]: ArgsOf<'guildCreate'>, bot) {
+  async onGuildCreate([guild]: ArgsOf<'guildCreate'>) {
     const avs = new AgeVerificationService(guild);
     await avs.init();
     avs.onGuildCreated();

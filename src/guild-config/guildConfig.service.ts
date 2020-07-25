@@ -20,7 +20,7 @@ export class GuildConfigService {
     }
 
     async updateGuildConfig(guildId: string, values: any) {
-        return await this.guildConfigRepository.update({guildId}, values);
+        return await this.guildConfigRepository.update({ guildId }, values);
     }
 
     async updateBanCount(guildId: string, banCount: number) {

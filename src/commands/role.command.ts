@@ -1,11 +1,10 @@
-import { Command, CommandMessage, Infos } from '@typeit/discord';
-import { MessageEmbed } from 'discord.js';
+import { Command, CommandMessage } from '@typeit/discord';
 import { GuildConfigService } from '../guild-config/guildConfig.service';
 
 interface NvrArgs {
     roleName: string;
 }
-export abstract class RankCommands {
+export abstract class RoleCommands {
     @Command('nvr :roleName')
     async nvr(cmd: CommandMessage<NvrArgs>) {
         const sender = cmd.member;
@@ -19,7 +18,7 @@ export abstract class RankCommands {
                 const notVerifiedRoleId = (role) ? role.id : undefined;
                 const guildConfigService = new GuildConfigService();
                 if (guild.id && notVerifiedRoleId) {
-                    const updateResult = await guildConfigService.updateGuildConfig(guild.id, { notVerifiedRoleId });
+                    await guildConfigService.updateGuildConfig(guild.id, { notVerifiedRoleId });
                     cmd.reply(`Successfully changed the age-not-verified role.`);
                 }
             } else {
@@ -43,7 +42,7 @@ export abstract class RankCommands {
                 const verifiedRoleId = (role) ? role.id : undefined;
                 const guildConfigService = new GuildConfigService();
                 if (guild.id && verifiedRoleId) {
-                    const updateResult = await guildConfigService.updateGuildConfig(guild.id, { verifiedRoleId });
+                    await guildConfigService.updateGuildConfig(guild.id, { verifiedRoleId });
                     cmd.reply(`Successfully changed the age-verified role.`);
                 }
             } else {

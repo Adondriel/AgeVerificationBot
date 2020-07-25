@@ -69,10 +69,10 @@ export class AgeVerificationService {
             if (response < minAge) {
                 this.banMember(member, this.under13);
             } else if (response < maxAge) {
-                member.send(this.verifiedMsg);
+                await member.send(this.verifiedMsg);
                 this.memberVerified(member);
             } else if (tryCount < 1) {
-                member.send(this.over100);
+                await member.send(this.over100);
                 this.verifyAge(member, tryCount + 1);
             } else {
                 this.banMember(member, this.over100Banned);
@@ -104,9 +104,9 @@ export class AgeVerificationService {
             // @ts-ignore
             const collector = new Discord.MessageCollector(message.channel, r => r, {
                 // 1 hr
-                // time: 3600000
+                time: 3600000,
                 // 10 seconds
-                time: 10000,
+                // time: 10000,
                 max: 1,
             });
             // collector.addListener('end', this.collectorEnded.bind(this, member));
@@ -206,10 +206,10 @@ export class AgeVerificationService {
         });
     }
 
-    private banMember(member: GuildMember, msg: Discord.MessageEmbed) {
+    private async banMember(member: GuildMember, msg: Discord.MessageEmbed) {
         try {
-            member.send(msg);
-            member.ban();
+            await member.send(msg);
+            await member.ban();
             this.guildConfigService.updateBanCount(this.guild.id, this.guildConfig.banCount + 1);
         } catch (e) {
             console.error('Error banning member, ', e);
