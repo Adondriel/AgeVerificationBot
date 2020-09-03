@@ -28,8 +28,11 @@ use `!avb help` for more info.
   - [TypeORM](https://typeorm.io/#/) and ORM that is actually meant to be used in TS projects, with support for mongoDB!
   - [MongoDB](https://www.mongodb.com/cloud/atlas) via MongoDB Atlas (free)
   - [Discord.ts](https://github.com/OwenCalvin/discord.ts) A proper discord.js framework, but using Typescript & decorators!
-  - Heroku ready, just link heroku to a fork of this repo, and you are good to go!
 
+## Other Info
+  - Heroku ready, just link heroku to a fork of this repo, setup token & DB connection info.
+  - In theory, this repo could be modified to "easily" create a single repo that hosts both the bot & a bot website on a single server instance.
+  - The "bot" folder is specific to this bot, and you could easily remove it, and implement your bot within the commands alone. It is only needed because of this bot's behavior (time based confirmation requires a stateful architecture in this case, in that, each user being verified needs to have it's own instance of the bot logic, so that it doesn't lose track of where the user came from, etc)
 
 ## Installation
 
