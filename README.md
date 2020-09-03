@@ -13,6 +13,7 @@ The goal of this discord bot is to "verify" the age of any user who joins your d
   - [TypeORM](https://typeorm.io/#/) and ORM that is actually meant to be used in TS projects, with support for mongoDB!
   - [MongoDB](https://www.mongodb.com/cloud/atlas) via MongoDB Atlas (free)
   - [Discord.ts](https://github.com/OwenCalvin/discord.ts) A proper discord.js framework, but using Typescript & decorators!
+  - Heroku ready, just link heroku to a fork of this repo, and you are good to go!
 ## Installation
 
 ```bash
