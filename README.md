@@ -3,16 +3,16 @@ The goal of this discord bot is to "verify" the age of any user who joins your d
 
 Ensure your server is following the Discord TOS by verifing the age of new server members, and banning those that would violate it.
 
-When a new member joins your discord, this bot will ask them to verify their age, and will give them 1 day to do so.
+When a new member joins your discord, this bot will ask them to verify their age, and will give them 1 hour to do so.
 If they are under 13, they will be automatically banned by the bot & informed why they were banned.
 If they respond over 100 they have 1 chance to answer truthfully or they are also banned for lying about their age.
 
+When the bot is first added it will create an "unverified" and "verified" role.
+When the user joins, they are given the "unverified" role, and asked to verify their age, in a DM.
+Once their age is verified, the bot should update the user's role with the "verified" role.
 
-Future features:
- * Sync ban list with central database of banned discord accounts. (cross-server)
- * Retroactively verify age of existing members
- * Let us know of any other features you would like in our support server.
-
+All ages & ranks that the bot uses can be configured using the bot commands.
+use `!avb help` for more info.
 
 ![verified example](https://i.imgur.com/vYeuged.png)
 ![banned example](https://i.imgur.com/j1C36kU.png)
@@ -52,11 +52,12 @@ $ npm run start:prod
 
 ## Test
 Testing of this bot requires you to have an alt account.
+Message @Adondriel on discord to get an invite link to the test server, to see how it works.
 
 ## Support
-
 I am active in the [Discord.ts](https://github.com/OwenCalvin/discord.ts) discord server. (how meta can we get?)
 
-## Stay in touch
+Our support discord: https://discord.gg/j6PcGGB
 
+## Stay in touch
 - Author - [Adam Pine](https://adampine.me)
