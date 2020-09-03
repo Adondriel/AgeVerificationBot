@@ -1,6 +1,21 @@
 ## Description
 The goal of this discord bot is to "verify" the age of any user who joins your discord server.
 
+Ensure your server is following the Discord TOS by verifing the age of new server members, and banning those that would violate it.
+
+When a new member joins your discord, this bot will ask them to verify their age, and will give them 1 day to do so.
+If they are under 13, they will be automatically banned by the bot & informed why they were banned.
+If they respond over 100 they have 1 chance to answer truthfully or they are also banned for lying about their age.
+
+
+Future features:
+ * Sync ban list with central database of banned discord accounts. (cross-server)
+ * Retroactively verify age of existing members
+ * Let us know of any other features you would like in our support server.
+
+
+![verified example](https://i.imgur.com/vYeuged.png)
+![banned example](https://i.imgur.com/j1C36kU.png)
 
 ### Features:
   - DM based interactions (no clutter or private info being sent to public channels)
@@ -14,6 +29,8 @@ The goal of this discord bot is to "verify" the age of any user who joins your d
   - [MongoDB](https://www.mongodb.com/cloud/atlas) via MongoDB Atlas (free)
   - [Discord.ts](https://github.com/OwenCalvin/discord.ts) A proper discord.js framework, but using Typescript & decorators!
   - Heroku ready, just link heroku to a fork of this repo, and you are good to go!
+
+
 ## Installation
 
 ```bash
@@ -32,6 +49,9 @@ $ npm run start:dev
 # production mode
 $ npm run start:prod
 ```
+
+## Test
+Testing of this bot requires you to have an alt account.
 
 ## Support
 
